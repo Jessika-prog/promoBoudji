@@ -1,0 +1,58 @@
+body, html {
+    /* On définit un fond transparent sur la page pour ne pas avoir un carré
+     * blanc à l'écran dans OBS */
+    background: transparent;
+}
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* position: absolute; */
+}
+p{
+    line-height: 0.05;
+}
+.date{
+    font-size: 0.5em;
+}
+
+/**
+ * Apparence de la notification.
+ */
+.notification {
+    /* On positionne la notification en bas à gauche de l'écran */
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    /* On définit une transition pour son passage de l'état initial (masqué) à
+     * son état visible */
+    transition: all 0.5s;
+    /* Partie purement esthétique */
+    padding: 15px 20px;
+    font-family: sans-serif;
+    font-size: 20pt;
+    font-weight: bold;
+    color: #333;
+    background: rgba(241, 240, 161, 0.801);
+    border-bottom: #ff4800 solid 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/**
+ * État initial de la notification :
+ * on la décale vers le bas et on la rend transparente
+ */
+.notification {
+    transform: translate(0, 100px);
+    opacity: 0;
+}
+
+/**
+ * État "visible" de la notification:
+ * on la remet à sa place initiale et on enlève la transparence
+ */
+.notification.visible {
+    transform: translate(0, 0);
+    opacity: 1;
+}   
